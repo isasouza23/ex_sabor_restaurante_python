@@ -14,7 +14,7 @@ class Restaurante:
         return f'{self._nome} | {self._categoria}'
     
     @classmethod
-    def listar_restaurante(cls):
+    def listar_restaurantes(cls):
         print("")
         print(f"{'Nome do restaurante'.ljust(25)} | {'Categoria'.ljust(25)} | {'Avaliação'.ljust(25)} | {'Status'}")
         for restaurante in cls.restaurantes:
@@ -35,9 +35,10 @@ class Restaurante:
             print("A nota deve estar entre 0 e 10.")
 
     @property
-    def media_avaliacao(self):
+    def media_avaliacoes(self):
         if not self._avaliacao:
             return '-'
-        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)quantidade_de_notas = len(self._avaliacao)
+        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
+        quantidade_de_notas = len(self._avaliacao)
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
